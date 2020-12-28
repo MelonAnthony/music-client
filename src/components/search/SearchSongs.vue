@@ -1,13 +1,30 @@
 <template>
-  <div>歌曲</div>
+  <div class="search-songs">
+    <album-content :listOfSongs="listOfSongs"></album-content>
+  </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import {mixin} from '../../mixins/index'
+import AlbumContent from '../AlbumContent'
 export default {
-  name: 'SearchSongs'
+  name: 'SearchSongs',
+  components: {
+    AlbumContent
+  },
+  mixins: [mixin],
+  computed: {
+    ...mapGetters([
+      'listOfSongs'
+    ])
+  },
+  mounted () {
+    this.getSong()
+  }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  @import "../../assets/css/search-songs.scss";
 </style>

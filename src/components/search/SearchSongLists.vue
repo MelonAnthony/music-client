@@ -1,5 +1,5 @@
 <template>
-  <div>歌单</div>
+  <div class="search-song-Lists">歌单</div>
 </template>
 
 <script>
