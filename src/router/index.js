@@ -7,7 +7,12 @@ import MyMusic from '@/pages/MyMusic'
 import Home from '@/pages/Home'
 
 Vue.use(Router)
-
+// 解决导航栏重复点击问题
+// NavigationDuplicated: Avoided redundant navigation to current location
+const routerPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return routerPush.call(this, location).catch(err => err)
+}
 export default new Router({
   routes: [
     {

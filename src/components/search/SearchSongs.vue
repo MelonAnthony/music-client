@@ -6,7 +6,7 @@
 
 <script>
 import {mapGetters} from 'vuex'
-import {mixin} from '../../mixins/index'
+import {mixin} from '../../mixins'
 import AlbumContent from '../AlbumContent'
 export default {
   name: 'SearchSongs',

@@ -25,8 +25,10 @@
 </template>
 
 <script>
+import {mixin} from '../mixins'
 export default {
   name: 'AlbumContent',
+  mixins: [mixin],
   props: ['listOfSongs']
 }
 </script>

@@ -48,6 +48,8 @@
     .item-img {
       width: $play-bar-height;
       height: $play-bar-height;
+      display: flex;
+      align-items: center;
       img {
         width: 100%;
       }

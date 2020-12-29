@@ -46,6 +46,13 @@ const song = {
       }
       return id
     },
+    playButtonUrl: state => {
+      let playButtonUrl = state.playButtonUrl
+      if (!playButtonUrl) {
+        playButtonUrl = JSON.parse(window.sessionStorage.getItem('playButtonUrl') || null)
+      }
+      return playButtonUrl
+    },
     duration: state => {
       let duration = state.duration
       if (!duration) {
@@ -140,6 +147,10 @@ const song = {
     setId: (state, id) => {
       state.id = id
       window.sessionStorage.setItem('id', JSON.stringify(id))
+    },
+    setPlayButtonUrl: (state, playButtonUrl) => {
+      state.playButtonUrl = playButtonUrl
+      window.sessionStorage.setItem('playButtonUrl', JSON.stringify(playButtonUrl))
     },
     setDuration: (state, duration) => {
       state.duration = duration
